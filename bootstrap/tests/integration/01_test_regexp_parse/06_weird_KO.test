@@ -1,0 +1,228 @@
+
+
+# TEST START ###################################################################
+# Test args              : '\a'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\1'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "1", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "]", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\a?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", zero or one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\#*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "#", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^a]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "^a", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^ab]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "^ab", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a^b]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "^ab", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[^a^b]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "^ab", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : [z-a]
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, l'intervalle est mal défini.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : [9-0]
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, l'intervalle est mal défini.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '*'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, un opérateur ne peut pas être appelé tout seul, ou doit être échappé.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '**'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, un opérateur ne peut pas être appelé tout seul, ou doit être échappé.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\**'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "*", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '+'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, un opérateur ne peut pas être appelé tout seul, ou doit être échappé.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '++'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, un opérateur ne peut pas être appelé tout seul, ou doit être échappé.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\++'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "+", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[?'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, il n'y a pas de crochet fermant.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\[?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "[", zero or one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ']*'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, un opérateur ne peut pas être appelé tout seul, ou doit être échappé.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\]*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "]", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]?*'
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+Erreur dans l'expression régulière, un opérateur ne peut pas être appelé tout seul, ou doit être échappé.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]\?\*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", one time.
+One in "?", one time.
+One in "*", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]\?*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", one time.
+One in "?", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z^0]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "0^abcdefghijklmnopqrstuvwxyz", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################

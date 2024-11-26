@@ -1,0 +1,327 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_01_empty_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_02_comment_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[comment:1:0] ### COMMENT ABC COMMENT [newline:1:23]
+[comment:2:0] ### ANOTHER COMMENT WITH # INSIDE COMMENT [newline:2:41]
+[num::dec:3:0] 1 [comment:3:1]  # COMMENT AFTER INT  [newline:3:22]
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_03_blanks_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[name:1:0] next_is_a_space [blank:1:15]   [name:1:16] next_is_a_tabulation [blank:1:36] 	 [name:1:37] next_is_a_newline [newline:1:54]
+[name:2:0] END [newline:2:3]
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_04_various_basic_lexems_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[newline:1:0]
+[comment:2:0] # quelques instructions [newline:2:23]
+[insn:3:0] STOP_CODE [newline:3:9]
+[insn:4:0] POP_TOP [newline:4:7]
+[insn:5:0] ROT_TWO [newline:5:7]
+[insn:6:0] ROT_THREE [newline:6:9]
+[insn:7:0] DUP_TOP [newline:7:7]
+[insn:8:0] DUP_TOP [name:8:7] _TWO [newline:8:11]
+[insn:9:0] ROT_FOUR [newline:9:8]
+[insn:10:0] NOP [newline:10:3]
+[insn:11:0] UNARY_POSITIVE [newline:11:14]
+[insn:12:0] UNARY_NEGATIVE [newline:12:14]
+[insn:13:0] UNARY_NOT [newline:13:9]
+[insn:14:0] UNARY_CONVERT [newline:14:13]
+[insn:15:0] UNARY_INVERT [newline:15:12]
+[insn:16:0] BINARY_POWER [newline:16:12]
+[insn:17:0] BINARY_MULTIPLY [newline:17:15]
+[insn:18:0] BINARY_DIVIDE [newline:18:13]
+[insn:19:0] BINARY_MODULO [newline:19:13]
+[insn:20:0] BINARY_ADD [newline:20:10]
+[insn:21:0] BINARY_SUBTRACT [newline:21:15]
+[insn:22:0] BINARY_SUBSCR [newline:22:13]
+[insn:23:0] BINARY_FLOOR_DIVIDE [newline:23:19]
+[insn:24:0] BINARY_TRUE_DIVIDE [newline:24:18]
+[insn:25:0] INPLACE_FLOOR_DIVIDE [newline:25:20]
+[insn:26:0] INPLACE_TRUE_DIVIDE [newline:26:19]
+[insn:27:0] SLICE [newline:27:5]
+[insn:28:0] SLICE [name:28:5] _PLUS_1 [newline:28:12]
+[insn:29:0] SLICE [name:29:5] _PLUS_2 [newline:29:12]
+[insn:30:0] SLICE [name:30:5] _PLUS_3 [newline:30:12]
+[insn:31:0] STORE_SLICE [newline:31:11]
+[insn:32:0] STORE_SLICE [name:32:11] _PLUS_1 [newline:32:18]
+[insn:33:0] STORE_SLICE [name:33:11] _PLUS_2 [newline:33:18]
+[insn:34:0] STORE_SLICE [name:34:11] _PLUS_3 [newline:34:18]
+[insn:35:0] DELETE_SLICE [newline:35:12]
+[insn:36:0] DELETE_SLICE [name:36:12] _PLUS_1 [newline:36:19]
+[insn:37:0] DELETE_SLICE [name:37:12] _PLUS_2 [newline:37:19]
+[insn:38:0] DELETE_SLICE [name:38:12] _PLUS_3 [newline:38:19]
+[insn:39:0] GET_AITER [newline:39:9]
+[insn:40:0] GET_ANEXT [newline:40:9]
+[insn:41:0] BEFORE_ASYNC_WITH [newline:41:17]
+[insn:42:0] BEGIN_FINALLY [newline:42:13]
+[insn:43:0] END_ASYNC_FOR [newline:43:13]
+[insn:44:0] GET_YIELD_FROM_ITER [newline:44:19]
+[insn:45:0] LOAD_BUILD_CLASS [newline:45:16]
+[insn:46:0] YIELD_FROM [newline:46:10]
+[insn:47:0] GET_AWAITABLE [newline:47:13]
+[insn:48:0] WITH_CLEANUP_START [newline:48:18]
+[insn:49:0] WITH_CLEANUP_FINISH [newline:49:19]
+[insn:50:0] SETUP_ANNOTATIONS [newline:50:17]
+[insn:51:0] POP_EXCEPT [newline:51:10]
+[insn:52:0] UNPACK_EX [newline:52:9]
+[insn:53:0] DELETE_DEREF [newline:53:12]
+[insn:54:0] CALL_FUNCTION_EX [newline:54:16]
+[insn:55:0] LIST_APPEND [newline:55:11]
+[insn:56:0] LOAD_CLASSDEREF [newline:56:15]
+[insn:57:0] BUILD_LIST_UNPACK [newline:57:17]
+[insn:58:0] BUILD_MAP_UNPACK [newline:58:16]
+[insn:59:0] BUILD_MAP_UNPACK [name:59:16] _WITH_CALL [newline:59:26]
+[insn:60:0] BUILD_TUPLE_UNPACK [newline:60:18]
+[insn:61:0] BUILD_SET_UNPACK [newline:61:16]
+[insn:62:0] SETUP_ASYNC_WITH [newline:62:16]
+[insn:63:0] FORMAT_VALUE [newline:63:12]
+[insn:64:0] BUILD_CONST_KEY_MAP [newline:64:19]
+[insn:65:0] BUILD_STRING [newline:65:12]
+[insn:66:0] BUILD_TUPLE_UNPACK [name:66:18] _WITH_CALL [newline:66:28]
+[insn:67:0] LOAD_METHOD [newline:67:11]
+[insn:68:0] CALL_METHOD [newline:68:11]
+[insn:69:0] CALL_FINALLY [newline:69:12]
+[insn:70:0] POP_FINALLY [newline:70:11]
+[newline:71:0]
+[insn:72:0] STORE_MAP [newline:72:9]
+[insn:73:0] INPLACE_ADD [newline:73:11]
+[insn:74:0] INPLACE_SUBTRACT [newline:74:16]
+[insn:75:0] INPLACE_MULTIPLY [newline:75:16]
+[insn:76:0] INPLACE_DIVIDE [newline:76:14]
+[insn:77:0] INPLACE_MODULO [newline:77:14]
+[insn:78:0] STORE_SUBSCR [newline:78:12]
+[insn:79:0] DELETE_SUBSCR [newline:79:13]
+[insn:80:0] BINARY_LSHIFT [newline:80:13]
+[insn:81:0] BINARY_RSHIFT [newline:81:13]
+[insn:82:0] BINARY_AND [newline:82:10]
+[insn:83:0] BINARY_XOR [newline:83:10]
+[insn:84:0] BINARY_OR [newline:84:9]
+[insn:85:0] INPLACE_POWER [newline:85:13]
+[insn:86:0] GET_ITER [newline:86:8]
+[insn:87:0] PRINT_EXPR [newline:87:10]
+[insn:88:0] PRINT_ITEM [newline:88:10]
+[insn:89:0] PRINT_NEWLINE [newline:89:13]
+[insn:90:0] PRINT_ITEM [name:90:10] _TO [newline:90:13]
+[insn:91:0] PRINT_NEWLINE [name:91:13] _TO [newline:91:16]
+[insn:92:0] INPLACE_LSFHIT [newline:92:14]
+[insn:93:0] INPLACE_RSHIFT [newline:93:14]
+[insn:94:0] INPLACE_AND [newline:94:11]
+[insn:95:0] INPLACE_XOR [newline:95:11]
+[insn:96:0] INPLACE_OR [newline:96:10]
+[insn:97:0] BREAK_LOOP [newline:97:10]
+[insn:98:0] WITH_CLEANUPS [newline:98:13]
+[insn:99:0] LOAD_LOCALS [newline:99:11]
+[insn:100:0] RETURN_VALUE [newline:100:12]
+[insn:101:0] IMPORT_STAR [newline:101:11]
+[insn:102:0] EXEC_STMT [newline:102:9]
+[insn:103:0] YIELD_VALUE [newline:103:11]
+[insn:104:0] POP_BLOCK [newline:104:9]
+[insn:105:0] END_FINALLY [newline:105:11]
+[insn:106:0] BUILD_CLASS [newline:106:11]
+[insn:107:0] STORE_NAME [newline:107:10]
+[insn:108:0] DELETE_NAME [newline:108:11]
+[insn:109:0] UNPACK_SEQUENCE [newline:109:15]
+[insn:110:0] FOR_ITER [newline:110:8]
+[insn:111:0] LIST_APPEND [newline:111:11]
+[insn:112:0] STORE_ATTR [newline:112:10]
+[insn:113:0] DELETE_ATTR [newline:113:11]
+[insn:114:0] STORE_GLOBAL [newline:114:12]
+[insn:115:0] DELETE_GLOBAL [newline:115:13]
+[insn:116:0] DUP_TOP [name:116:7] X [newline:116:8]
+[insn:117:0] LOAD_CONST [newline:117:10]
+[insn:118:0] LOAD_NAME [newline:118:9]
+[insn:119:0] BUILD_TUPLE [newline:119:11]
+[insn:120:0] BUILD_LIST [newline:120:10]
+[insn:121:0] BUILD_SET [newline:121:9]
+[insn:122:0] BUILD_MAP [newline:122:9]
+[insn:123:0] LOAD_ATTR [newline:123:9]
+[insn:124:0] COMPARE_OP [newline:124:10]
+[insn:125:0] IMPORT_NAME [newline:125:11]
+[insn:126:0] IMPORT_FROM [newline:126:11]
+[insn:127:0] JUMP_FORWARD [newline:127:12]
+[insn:128:0] JUMP_IF_FALSE_OR_POP [newline:128:20]
+[insn:129:0] JUMP_IF_TRUE_OR_POP [newline:129:19]
+[insn:130:0] JUMP_ABSOLUTE [newline:130:13]
+[insn:131:0] POP_JUMP_IF_FALSE [newline:131:17]
+[insn:132:0] POP_JUMP_IF_TRUE [newline:132:16]
+[insn:133:0] LOAD_GLOBAL [newline:133:11]
+[insn:134:0] CONTINUE_LOOP [newline:134:13]
+[insn:135:0] SETUP_LOOP [newline:135:10]
+[insn:136:0] SETUP_EXCEPT [newline:136:12]
+[insn:137:0] SETUP_FINALLY [newline:137:13]
+[insn:138:0] LOAD_FAST [newline:138:9]
+[insn:139:0] STORE_FAST [newline:139:10]
+[insn:140:0] DELETE_FAST [newline:140:11]
+[insn:141:0] RAISE_VARARGS [newline:141:13]
+[insn:142:0] CALL_FUNCTION [newline:142:13]
+[insn:143:0] MAKE_FUNCTION [newline:143:13]
+[insn:144:0] BUILD_SLICE [newline:144:11]
+[insn:145:0] MAKE_CLOSURE [newline:145:12]
+[insn:146:0] LOAD_CLOSURE [newline:146:12]
+[insn:147:0] LOAD_DEREF [newline:147:10]
+[insn:148:0] STORE_DEREF [newline:148:11]
+[insn:149:0] CALL_FUNCTION [name:149:13] _VAR [newline:149:17]
+[insn:150:0] CALL_FUNCTION [name:150:13] _KW [newline:150:16]
+[insn:151:0] CALL_FUNCTION [name:151:13] _VAR_KW [newline:151:20]
+[insn:152:0] SETUP_WITH [newline:152:10]
+[insn:153:0] EXTENDED_ARG [newline:153:12]
+[insn:154:0] SET_ADD [newline:154:7]
+[insn:155:0] MAP_ADD [newline:155:7]
+[newline:156:0]
+[comment:157:0] # Reserved keywords [newline:157:19]
+[key::cst::null:158:0] Null [newline:158:4]
+[key::cst::none:159:0] None [newline:159:4]
+[key::cst::true:160:0] True [newline:160:4]
+[key::cst::false:161:0] False [newline:161:5]
+[newline:162:0]
+[comment:163:0] # Some directives [newline:163:17]
+[key::dir::constants:164:0] .consts [newline:164:7]
+[key::dir::names:165:0] .names [newline:165:6]
+[key::dir::varnames:166:0] .varnames [newline:166:9]
+[key::dir::text:167:0] .text [newline:167:5]
+[key::dir::set:168:0] .set [newline:168:4]
+[key::dir::line:169:0] .line [newline:169:5]
+[key::dir::interned:170:0] .interned [newline:170:9]
+[key::dir::freevars:171:0] .freevars [newline:171:9]
+[key::dir::cellvars:172:0] .cellvars [newline:172:9]
+[key::dir::code::start:173:0] .code_start [newline:173:11]
+[key::dir::code::end:174:0] .code_end [newline:174:9]
+[newline:175:0]
+[comment:176:0] # the character ':' [newline:176:19]
+[colon:177:0] : [newline:177:1]
+[newline:178:0]
+[comment:179:0] # brackets lists [newline:179:16]
+[lbracket:180:0] [ [newline:180:1]
+[rbracket:181:0] ] [newline:181:1]
+[newline:182:0]
+[comment:183:0] # parenthesis tuples [newline:183:20]
+[lparen:184:0] ( [newline:184:1]
+[rparen:185:0] ) [newline:185:1]
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_05_int_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[num::dec:1:0] 9 [newline:1:1]
+[num::dec:2:0] 123 [newline:2:3]
+[newline:3:0]
+[num::dec:4:0] -9 [newline:4:2]
+[num::dec:5:0] -123 [newline:5:4]
+[newline:6:0]
+[num::dec:7:0] +9 [newline:7:2]
+[num::dec:8:0] +123 [newline:8:4]
+[newline:9:0]
+[num::dec:10:0] 0 [newline:10:1]
+[newline:11:0]
+[num::dec:12:0] 00 [newline:12:2]
+[newline:13:0]
+[num::dec:14:0] 00123 [newline:14:5]
+[newline:15:0]
+[newline:16:0]
+[newline:17:0]
+[comment:18:0] # very long int [newline:18:15]
+[num::dec:19:0] 123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234456789012344567890123445678901234567890123445678901234456789012344567890123 [newline:19:553]
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_06_hex_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[num::hex:1:0] 0x12345678 [newline:1:10]
+[num::hex:2:0] 0x9 [newline:2:3]
+[num::hex:3:0] 0xABCDEF [newline:3:8]
+[num::hex:4:0] 0xabcdef [newline:4:8]
+[newline:5:0]
+[num::hex:6:0] 0x000001 [newline:6:8]
+[num::hex:7:0] 0x000000 [newline:7:8]
+[newline:8:0]
+[num::hex:9:0] 0x1234567890ABCDEF [newline:9:18]
+[newline:10:0]
+[comment:11:0] # very long hex [newline:11:15]
+[num::hex:12:0] 0x123456789abcdef123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF123456789ABCDEF [newline:12:122]
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_07_label_declaration_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[name:1:0] unlabel [newline:1:7]
+[name:2:0] unlabel0123 [newline:2:11]
+[name:3:0] unlabel0123blabla [newline:3:17]
+[newline:4:0]
+[name:5:0] UNLABEL [newline:5:7]
+[name:6:0] UNLABEL0123 [newline:6:11]
+[name:7:0] UNLABEL0123BLABLA [newline:7:17]
+[newline:8:0]
+[name:9:0] UnLAbelAVECdesMAJUScules_ET_minuSCULE [newline:9:37]
+[newline:10:0]
+[name:11:0] un_label [newline:11:8]
+[name:12:0] un_label_0_1_2_3 [newline:12:16]
+[newline:13:0]
+[name:14:0] _un_LABEL [newline:14:9]
+[name:15:0] __un_LABEL [newline:15:10]
+[newline:16:0]
+[name:17:0] un_label [blank:17:8]   [name:17:9] un_autre_label [newline:17:23]
+[newline:18:0]
+[name:19:0] un_label [lparen:19:8] ( [name:19:9] un_autre_label [newline:19:23]
+[newline:20:0]
+[name:21:0] un_label [lbracket:21:8] [ [name:21:9] un_autre_label [newline:21:23]
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_08_label_usage_OK.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[label:1:0] unlabel: [newline:1:8]
+[label:2:0] un_label   : [newline:2:12]
+[label:3:0] _un_LABEL_0_ : [newline:3:14]
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/01_per_type_09_strings_OK_1.pys
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+[string::dquote:1:0] "unechaine" [newline:1:11]
+[string::dquote:2:0] "UNECHAINEMAJUSCULE" [newline:2:20]
+[string::dquote:3:0] "UNECHAINEMAJUSCULEAVECDESENTIERS09862524" [newline:3:42]
+[string::dquote:4:0] "une chaine avec des espaces et tabulation	ici" [newline:4:47]
+[string::dquote:5:0] "une chaine avec des entiers  12345" [newline:5:36]
+[string::dquote:6:0] "une chaine avec des simple quote  '12345' eheh" [newline:6:48]
+[string::dquote:7:0] "une chaine avec des accents é à û ô " [newline:7:42]
+[string::dquote:8:0] "une chaine avec des acaractères divers # & @ ° € ç ` ! ?" [newline:8:63]
+[string::dquote:9:0] "une CHAINE avec DIVERSES CHOSE\t   divers # & @ ° € ç ` ! ?" [newline:9:65]
+[string::dquote:10:0] "une CHAINE avec des retours a la ligne\n\nfin de la chaine" [newline:10:60]
+# END Test stdout and stderr
+# TEST END   ###################################################################

@@ -1,0 +1,64 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "test1.py"
+.set name		 "<module>"
+.set stack_size		 3
+.set arg_count		 0
+
+.interned
+	"N"
+	"f"
+	"range"
+	"i"
+	"<module>"
+
+.consts
+	500
+	1
+	None
+
+.names
+	"N"
+	"f"
+	"range"
+	"i"
+
+.text
+.line 1
+	LOAD_CONST            0	# 500
+	STORE_NAME            0	# "N"
+.line 2
+	LOAD_CONST            1	# 1
+	STORE_NAME            1	# "f"
+.line 4
+	SETUP_LOOP            label_2
+	LOAD_NAME             2	# "range"
+	LOAD_CONST            1	# 1
+	LOAD_NAME             0	# "N"
+	CALL_FUNCTION         2
+	GET_ITER              
+label_0:
+	FOR_ITER              label_1
+	STORE_NAME            3	# "i"
+.line 5
+	LOAD_NAME             1	# "f"
+	LOAD_NAME             3	# "i"
+	INPLACE_MULTIPLY      
+	STORE_NAME            1	# "f"
+	JUMP_ABSOLUTE         label_0
+label_1:
+	POP_BLOCK             
+.line 7
+label_2:
+	LOAD_NAME             3	# "i"
+	PRINT_ITEM            
+	PRINT_NEWLINE         
+	LOAD_CONST            2	# None
+	RETURN_VALUE          
+
+# Disassembled Thu Nov  3 17:20:23 2022
+

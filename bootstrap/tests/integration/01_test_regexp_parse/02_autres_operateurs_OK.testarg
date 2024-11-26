@@ -1,0 +1,14 @@
+# les opérateurs + ? ^ et l'échappement
+# commentaire non testé
+
+'a+'
+
+'1?'
+
+'.+'
+
+'.?'
+
+'^a'
+
+'\n+'

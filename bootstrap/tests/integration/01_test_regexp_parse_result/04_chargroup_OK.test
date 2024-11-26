@@ -1,0 +1,144 @@
+
+
+# TEST START ###################################################################
+# Test args              : '[abc]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abc", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\-+]?[0-9]+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "+-", zero or one time.
+One in "0123456789", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[+\-]?[0-9]+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "+-", zero or one time.
+One in "0123456789", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[\-+]?[0-9]+[a-z]*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "+-", zero or one time.
+One in "0123456789", one or more times.
+One in "abcdefghijklmnopqrstuvwxyz", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '0x[0-9a-fA-F]+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "0", one time.
+One in "x", one time.
+One in "0123456789ABCDEFabcdef", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^[a-f\-q-w+]+q^t*[x]?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One not in "+-abcdefqrstuvw", one or more times.
+One in "q", one time.
+One not in "t", zero or more times.
+One in "x", zero or one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[0-9]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "0123456789", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z0-9]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "0123456789abcdefghijklmnopqrstuvwxyz", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z$!0-9%]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "!$%0123456789abcdefghijklmnopqrstuvwxyz", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a\-z]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "-az", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^[a-z]'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One not in "abcdefghijklmnopqrstuvwxyz", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '[a-z]?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "abcdefghijklmnopqrstuvwxyz", zero or one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^[c-y]+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One not in "cdefghijklmnopqrstuvwxy", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################

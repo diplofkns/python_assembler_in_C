@@ -1,0 +1,55 @@
+
+
+# TEST START ###################################################################
+# Test args              : 'a+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '1?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "1", zero or one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '.+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One not in "", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '.?'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One not in "", zero or one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '^a'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One not in "a", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : '\n+'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "
+", one or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################

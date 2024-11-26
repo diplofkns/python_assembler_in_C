@@ -1,0 +1,63 @@
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/03_errors_01_KO.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+[ ERROR ] No matching regexp at line 1: '$'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/03_errors_02_KO.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+[ ERROR ] No matching regexp at line 1: '+'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/03_errors_03_KO.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+[ ERROR ] No matching regexp at line 1: '-'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/03_errors_04_KO.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+[ ERROR ] No matching regexp at line 1: '*'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/03_errors_05_KO.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+[ ERROR ] No matching regexp at line 1: '/'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/03_errors_06_KO.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+[ ERROR ] No matching regexp at line 1: '-toto'.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : ../../prog/lexer_pyas.conf 03_test_lexer/03_errors_07_KO.pys
+# Test return code       : EXIT_FAILURE
+# Test stdout and stderr :
+[ ERROR ] No matching regexp at line 2: '-0x12AB'.
+# END Test stdout and stderr
+# TEST END   ###################################################################

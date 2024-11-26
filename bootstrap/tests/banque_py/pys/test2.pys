@@ -1,0 +1,31 @@
+
+
+# Start pyc-objdump output
+
+.set version_pyvm	 62211
+.set flags		 0x00000040
+.set filename		 "test2.py"
+.set name		 "<module>"
+.set stack_size		 1
+.set arg_count		 0
+
+.interned
+	"a"
+	"<module>"
+
+.consts
+	2
+	None
+
+.names
+	"a"
+
+.text
+.line 1
+	LOAD_CONST            0	# 2
+	STORE_NAME            0	# "a"
+	LOAD_CONST            1	# None
+	RETURN_VALUE          
+
+# Disassembled Sat Nov  5 22:01:01 2022
+

@@ -1,0 +1,97 @@
+
+
+# TEST START ###################################################################
+# Test args              : 'aa'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", one time.
+One in "a", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*b*cde'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", zero or more times.
+One in "b", zero or more times.
+One in "c", one time.
+One in "d", one time.
+One in "e", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'aaa*b*c*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", one time.
+One in "a", one time.
+One in "a", zero or more times.
+One in "b", zero or more times.
+One in "c", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a*b*c*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", zero or more times.
+One in "b", zero or more times.
+One in "c", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'a.b*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "a", one time.
+One not in "", one time.
+One in "b", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'ba.b*'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "b", one time.
+One in "a", one time.
+One not in "", one time.
+One in "b", zero or more times.
+# END Test stdout and stderr
+# TEST END   ###################################################################
+
+
+# TEST START ###################################################################
+# Test args              : 'STORE_FAST'
+# Test return code       : EXIT_SUCCESS
+# Test stdout and stderr :
+One in "S", one time.
+One in "T", one time.
+One in "O", one time.
+One in "R", one time.
+One in "E", one time.
+One in "_", one time.
+One in "F", one time.
+One in "A", one time.
+One in "S", one time.
+One in "T", one time.
+# END Test stdout and stderr
+# TEST END   ###################################################################

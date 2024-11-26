@@ -1,0 +1,61 @@
+# diveres regexp plus ou moins weird
+# dont l'analyse dépend de ce qu'ils ont décidé de coder
+# A compléter !
+
+
+# échappements d'autres caractères.
+# Au choix :
+#   - soit détectés comme une erreur,
+#   - soit acceptés comme le caractère échappé
+'\a'
+
+'\1'
+
+'\]'
+
+'\a?'
+
+'\#*'
+
+# etc....
+
+
+# negations bizarres dans des chargroup
+# Au choix :
+#   - soit détectés comme une erreur,
+#   - soit acceptés comme caractère '^'
+#   - soit ... ?
+'[^a]'
+'[^ab]'
+'[a^b]'
+'[^a^b]'
+
+# char group mal ordonne
+# Au choix :
+#   - soit détectés comme une erreur,
+#   - soit acceptés comme caractère indépendants
+#   - soit ... ?
+[z-a]
+[9-0]
+
+# autres... à vous de voir...
+'*'
+'**'
+'\**'
+
+'+'
+'++'
+'\++'
+
+'[?'
+'\[?'
+
+']*'
+'\]*'
+
+'[a-z]?*'
+'[a-z]\?\*'
+
+'[a-z]\?*'
+
+'[a-z^0]'
